@@ -73,24 +73,24 @@ contract SupplyChain {
    */
 
   modifier forSale(uint _sku) {
-    _;
     require(items[_sku].state == State.ForSale);
     require(items[_sku].sku < skuCount);
+    _;
   }
 
   modifier sold(uint _sku) {
-    _;
     require(items[_sku].state == State.Sold);
+    _;
   }
 
   modifier shipped(uint _sku) {
-    _;
     require(items[_sku].state == State.Shipped);
+    _;
   }
 
   modifier received(uint _sku) {
-    _;
     require(items[_sku].state == State.Received);
+    _;
   }
 
 
